@@ -118,10 +118,6 @@
     color:#F0A31F ;
 }
 
-span{
-    color: #FFFFFF;
-}
-
 @media screen and (max-width: 500px){
   .bg-events{
     display: none

@@ -15,7 +15,7 @@ function Home() {
               Create New Event
             </a>
             <button className="bg-btn">Upgrade</button>
-            <span>|</span>
+            <span style={{color:'white'}}>|</span>
             <a className="bg-sign-up" href="#">
               Sign up
             </a>

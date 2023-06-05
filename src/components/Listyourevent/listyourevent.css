@@ -1,0 +1,28 @@
+.event-logo{
+    width: 80%;
+    margin: auto;
+
+}
+
+.event-img{
+    text-align: center;
+}
+.event-img img{
+    width: 10%;
+    background:url('../../images/Vector.png');
+}
+
+.list-event span{
+    width: 70%;
+}
+
+.list-event{
+    text-align: center;
+}
+.event-button{
+    display: flex;
+    gap: 2rem;
+}
+.list-event span{
+    color: black;
+}
