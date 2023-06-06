@@ -31,10 +31,12 @@ const Works = () => {
         <h2> How SpeakerOre works</h2>
         <span>Your GoldMine start Mining</span>
       </div>
+      <div className="in-swap">
       <div className="swapbutton">
-        <button onClick={handleLeft} className={left==true ?"green":""}>I am a Speaker</button>
-        <button onClick={handleRight} className={right==true ? "green":""}>I am a Event Manager</button>
+      <button onClick={handleLeft} className={left==true ?"green":"initial"}>I am a Speaker</button>
+        <button onClick={handleRight} className={right==true ? "green":"initial"}>I am a Event Manager</button>
       </div>
+       </div>
 
       {left==true ? <div className = "works-container " >
         <div className="works-box1">

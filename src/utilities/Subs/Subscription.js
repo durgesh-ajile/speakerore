@@ -1,6 +1,6 @@
 import React from "react";
 import "./subcription.css";
-import mic from "../../images/FINAL 07 1.jpeg";
+import mic from "../../images/FINAL-07 1.png";
 
 const pricedata = [
   {

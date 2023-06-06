@@ -15,9 +15,11 @@ import Viewdetails from './components/Viewdetails';
 import Admin from './utilities/Admin/Admin';
 import Profile from './utilities/UserProfile/Profile';
 import Categories from './utilities/Categories/Categories';
+import Navbar from './components/Navbar';
 function App() {
   return (
     <BrowserRouter>
+    {/* <Navbar/> */}
       <Routes>
       <Route path='/' element={<Landing/>}></Route>
       <Route exact path='/event' element={<PersistentDrawerLeft/>}></Route>

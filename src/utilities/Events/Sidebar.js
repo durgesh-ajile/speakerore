@@ -179,18 +179,7 @@ export default function PersistentDrawerLeft() {
             </select>
           </div>
         </div>
-        {/* <List>
-          {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
-            <ListItem key={text} disablePadding>
-              <ListItemButton>
-                <ListItemIcon>
-                  {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-                </ListItemIcon>
-                <ListItemText primary={text} />
-              </ListItemButton>
-            </ListItem>
-          ))}
-        </List> */}
+       
         <Divider />
       </Drawer>
       <Main open={open}>
@@ -202,8 +191,8 @@ export default function PersistentDrawerLeft() {
                 style={{
                   margin: "20px  0 0 2rem",
                   fontSize: "1rem",
-                  fontWeight: "900",
-                  color: "green",
+                  fontWeight: "500",
+                  color: "#24754F",
                 }}
               >
                 Education{" "}
@@ -214,12 +203,14 @@ export default function PersistentDrawerLeft() {
             <div className="card-2">
               <small>
                 <MdLocationOn color="grey" size={20} />
-                Online Event
+                <span style={{marginLeft:'5px'}}>Online Event</span>
+                
               </small>
               <br />
               <date>
                 {" "}
-                <MdWatchLater size={20} color="grey" /> Jan 2 , 2023 | 12:31pm
+                <MdWatchLater size={20} color="grey" /> 
+                <span style={{marginLeft:'7px'}}>Jan 2 , 2023 | 12:31pm</span>
               </date>
               <p></p>
             </div>

@@ -18,31 +18,31 @@ const Goldmine = () => {
           </div>
           <div className="gold-box">
             <img src={diverse} />
-            <span>Save Time</span>
+            <span>Diver Event</span>
           </div>
           <div className="gold-box">
             <img src={cut} />
-            <span>Save Time</span>
+            <span>Cut Out Middlemen</span>
           </div>
         </div>
         <div className="gold-top">
           <div className="gold-box">
             <img src={handshake} />
-            <span>Save Time</span>
+            <span>Freeze<br/> The Deal</span>
           </div>
           <div className="gold-box">
             <img src={authority} />
-            <span>Save Time</span>
+            <span>Establish Your Authority</span>
           </div>
           <div className="gold-box">
             <img src={global} />
-            <span>Save Time</span>
+            <span>Go global</span>
           </div>
         </div>
       </div>
       <div className="gold-right">
-      <div><h1>SpeakerOre -</h1></div>
-      <div><h1 style={{ color: "green" }}>A GoldMine for Speakers</h1></div>
+      <div><h1 style={{ marginBottom:'0', fontWeight:'700' }}>SpeakerOre -</h1></div>
+      <div><h1 style={{ color: "#24754F" }}>A GoldMine for Speakers</h1></div>
       <div>
         <ul>
           <li>Save Time to Focus Entirely on Content and Business</li>
@@ -57,6 +57,9 @@ const Goldmine = () => {
           <li>Establish your Authority as an Expert</li>
           <li>Go global easily!</li>
         </ul>
+      </div>
+      <div className="joinowbtn" style={{textAlign:'left'}} >
+        <button>Join now</button>
       </div>
       </div>
     </div>

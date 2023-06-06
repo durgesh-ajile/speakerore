@@ -4,7 +4,7 @@
 .banner-text{
     color: white;
     font-size: 2rem;
-    font-weight: 900;
+    font-weight: 800;
     width: 60%;
     text-align: center;
     display: flex;
@@ -12,14 +12,18 @@
     justify-content: center;
 }
 .banner-img{
-    width: 40%;
+    width: 30%;
+    display: flex;
+    justify-content: flex-end;
 }
 .banner-img img{
-    width: 100%;
+    width: 49%;
 }
 .banner-container{
     /* width:70%; */
     display: flex;
+    justify-content: space-between;
+    /* background-image: url('../images/Group 11459.png'); */
 }
 .mail{
     display: flex;
@@ -27,6 +31,10 @@
     gap: 1rem;
     width: 80%;
     margin: auto;
+}
+.mail span{
+    color:
+    #666666
 }
 .web{
     width: 50%;
@@ -48,7 +56,18 @@
 .box{
     width: 300px;
     display: flex;
-    flex-direction: column;
+    /* flex-direction: column; */
+}
+.icon-view{
+    margin: 17px;
+    color: #24754F;
+}
+.view-description bold{
+    margin-bottom: 10px;
+}
+.in-des{
+    color:#666666;
+    margin-top: 10px;
 }
 .box bold{
     font-weight: 700;

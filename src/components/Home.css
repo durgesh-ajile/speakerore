@@ -6,7 +6,9 @@
   height: 100vh;
   background-position: center;
 }
-
+body {
+  font-family: 'Inter', sans-serif;
+}
 .bg-text {
     /* position: absolute;
     top: 50%;
@@ -64,7 +66,7 @@
     width: 96%;
     background: rgba(0, 0, 0, 0.5);
     height: 67px;
-    padding: 1% 2%;
+    padding: 0.2% 2%;
     display: flex;
     justify-content: space-between;
 }
@@ -73,8 +75,9 @@
     background-image: url('../../public/images/Group.png');
     background-repeat: no-repeat;
     background-size: cover;
-    width: 199px;
-    height: 106px;
+    width: 192px;
+    height: 144px;
+    padding-top: 18px;
 }
 
 .bg-nav {
@@ -99,15 +102,17 @@
     width: 61px;
     height: 70px;
     color:#FFFFFF ;
+    font-weight: 700;
 }
 
 .bg-btn{
     width: 101px;
-    height: 44px;
+    height: 38px;
     margin: 15px;
     background-color: #24754F;
     color: #FFFFFF;
     border-radius: 10px;
+    font-weight: 700;
 }
 
 .bg-sign-up{
@@ -116,6 +121,7 @@
     text-decoration: none;
     height: 70px;
     color:#F0A31F ;
+    font-weight: 700;
 }
 
 @media screen and (max-width: 500px){
