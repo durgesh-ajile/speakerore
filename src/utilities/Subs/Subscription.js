@@ -1,6 +1,8 @@
 import React from "react";
 import "./subcription.css";
 import mic from "../../images/FINAL-07 1.png";
+import pinkback from '../../images/Vector 9.png'
+import orangeback from '../../images/Vector 10.png'
 
 const pricedata = [
   {
@@ -25,10 +27,12 @@ const Subscription = () => {
     <div className="subscribe-conatiner">
       <div className="text-container">
         <div className="mic-img">
-          <img src={mic} />
+          <img id='orange' src={orangeback} />
+          <img id='pink' src={pinkback} />
+          <img id='bee' src={mic} />
         </div>
         <div className="heading">
-          <span>Speaker Ore</span><br/>
+          <span>Speaker Ore</span>
           <small>Goldmine Control Room</small>
           <p>Take Action, Ownership and Start Mining</p>
         </div>
@@ -62,7 +66,7 @@ const Subscription = () => {
           );
         })}
         <div className="price-continue">
-        <button>Continue</button>
+        <button>CONTINUE</button>
         </div>
       </div>
     </div>
