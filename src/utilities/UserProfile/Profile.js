@@ -90,7 +90,7 @@ const Profile = () => {
         <div className="profile-pic">
           <div className="img">{data.name[0]}</div>
           <div className="name-deatils">
-            <bold>{data.name}</bold>
+            <h3>{data.name}</h3>
             <span>{data.email}</span>
           </div>
         </div>

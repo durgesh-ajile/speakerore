@@ -1,6 +1,6 @@
 
 form{
-    width: 70%;
+    width: 65%;
     margin: auto;
 }
 .input-details{
@@ -17,6 +17,9 @@ font-weight: 500;
 line-height: 24px;
 letter-spacing: -0.33101603388786316px;
 
+}
+.event-form{
+    margin-top: 50px;
 }
 .listevent-container{
     margin-top: 50px;
@@ -47,4 +50,14 @@ letter-spacing: -0.33101603388786316px;
 .next-button{
     text-align: right;
     margin-top:3rem ;
+}
+.input-details span{
+   color: #595959;
+font-size: 16px;
+font-weight: 500;
+line-height: 19px;
+letter-spacing: 0em;
+text-align: left;
+margin-top: 10px;
+margin-bottom: 10px;
 }

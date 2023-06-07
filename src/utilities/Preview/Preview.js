@@ -7,7 +7,7 @@ const Preview = () => {
     return (
       <div >
       <Eventdetails />
-      <div style={{width:"47%" ,textAlign:"center"}}>
+      <div style={{marginLeft:'16.5%', color:'#4D4B4B'}}>
       <h1 >Organizer Details</h1></div>
       <Organizerdetails/>
   

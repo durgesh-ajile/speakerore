@@ -1,4 +1,5 @@
 import * as React from "react";
+import { useState } from "react";
 import "./sidebar.css";
 import { styled, useTheme } from "@mui/material/styles";
 import Box from "@mui/material/Box";
@@ -19,9 +20,10 @@ import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
 import InboxIcon from "@mui/icons-material/MoveToInbox";
 import MailIcon from "@mui/icons-material/Mail";
-// import man from "../../images/Group 11459.png";
+import man from "../../images/Group 11450.png";
 import { MdLocationOn } from "react-icons/md";
 import { MdWatchLater } from "react-icons/md";
+import Calendar from "moedim";
 
 const drawerWidth = 340;
 
@@ -72,8 +74,12 @@ const DrawerHeader = styled("div")(({ theme }) => ({
 
 export default function PersistentDrawerLeft() {
   const theme = useTheme();
-  const [open, setOpen] = React.useState(false);
-
+  const [open, setOpen] = React.useState(true);
+  const [cal, setcal] = React.useState(false);
+  const [value, setValue] = useState(new Date());
+  const StyledCalendar = styled(Calendar)`
+    --moedim-primary: #f00;
+  `;
   const handleDrawerOpen = () => {
     setOpen(true);
   };
@@ -81,16 +87,18 @@ export default function PersistentDrawerLeft() {
   const handleDrawerClose = () => {
     setOpen(false);
   };
-
+  const handleCalendar = () => {
+    setcal((prev) => !prev);
+  };
   return (
-    <Box sx={{ display: "flex" , color: "grey"}} >
+    <Box sx={{ display: "flex", color: "grey" }}>
       <CssBaseline />
       <AppBar
         position="fixed"
         open={open}
         style={{ backgroundColor: "#24754F" }}
       >
-        <Toolbar style={{ paddingRight: "0" }}>
+        {/* <Toolbar style={{ paddingRight: "0" }}>
           <IconButton
             color="inherit"
             aria-label="open drawer"
@@ -111,26 +119,47 @@ export default function PersistentDrawerLeft() {
               </h3>
             </div>
             <div>
-              {/* <img src={man} style={{ width: "100%" }} /> */}
+              <img src={man} style={{ width: "100%" }} />
             </div>
           </Typography>
-        </Toolbar>
+        </Toolbar> */}
+        <div className="head-banner">
+        <div className="banner-container">
+        <div className="view-text">
+              <h3>
+                Gold Deposits - Events Exploration Page{" "}
+              </h3>
+              <h5 >
+                  Explore, Map, Analyse, Mine &amp; Extract. For best results,
+                  <br /> Choose events from your category and focus!
+                </h5>
+            </div>
+          <div >
+            <img src={man} />
+          </div>
+        </div>
+      </div>
       </AppBar>
       <Drawer
+      className="drawer" 
         sx={{
           width: drawerWidth,
           flexShrink: 0,
           "& .MuiDrawer-paper": {
             width: drawerWidth,
             boxSizing: "border-box",
+            background:"#F6F6F6",
+            color:"#666870",
+            
           },
         }}
         variant="persistent"
         anchor="left"
         open={open}
-        
       >
-        <DrawerHeader >
+              <div style={{width:"75%",margin:"auto"}}><h1>Filter</h1></div>
+
+        {/* <DrawerHeader>
           <IconButton onClick={handleDrawerClose}>
             {theme.direction === "ltr" ? (
               <ChevronLeftIcon />
@@ -138,10 +167,11 @@ export default function PersistentDrawerLeft() {
               <ChevronRightIcon />
             )}
           </IconButton>
-        </DrawerHeader>
+        </DrawerHeader> */}
         <Divider />
         <div className="filter-sidebar">
-            <h4 >Mode</h4>
+        {/* <div style={{width:"75%",margin:"auto"}}><h1>Filter</h1></div> */}
+        <div style={{width:"75%",margin:"auto"}}><h4>Modes</h4></div>
           <div className="mode">
             <div>
               <input type="checkbox" />
@@ -157,60 +187,102 @@ export default function PersistentDrawerLeft() {
               <input type="checkbox" />
               <lable>Hybrid</lable>
             </div>
-
-           
           </div>
-            <h4>Catogary</h4>
+          <div style={{width:"75%",margin:"auto"}}><h4>Cateogary</h4></div>
           <div className="catogary">
             <select placeholder="Select here">
-              <option>1</option>
+              <option placeholder="select here">1</option>
               <option>1</option>
               <option>1</option>
               <option>1</option>
             </select>
           </div>
-          <h4>Select a date</h4>
-          <div className="catogary">
-            <select placeholder="Select here">
-              <option>1</option>
-              <option>1</option>
-              <option>1</option>
-              <option>1</option>
-            </select>
-          </div>
+          <div style={{width:"75%",margin:"auto"}}><h4>Select a date</h4></div>
+          <div className="calendar"><input value={value} onClick={handleCalendar} placeholder="Select start date"/></div>
+          {cal == true ? (
+            <Calendar value={value} onChange={(d) => setValue(d)} />
+          ) : (
+            ""
+          )}
         </div>
-       
+        {/* <List>
+          {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
+            <ListItem key={text} disablePadding>
+              <ListItemButton>
+                <ListItemIcon>
+                  {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
+                </ListItemIcon>
+                <ListItemText primary={text} />
+              </ListItemButton>
+            </ListItem>
+          ))}
+        </List> */}
         <Divider />
       </Drawer>
       <Main open={open}>
         <DrawerHeader />
         <div className="card-container">
-          <div className="card">
+        {cardData.map((e) => (
+              <div className="card" >
+                <div className="card-1">
+                  <small
+                    style={{
+                      margin: "20px  0 0 2rem",
+                      fontSize: "1rem",
+                      fontWeight: "900",
+                      color: "green",
+                    }}
+                  >
+                    {e.event_catogary}{" "}
+                  </small>
+                  <bold>{e.organizer}</bold>
+                  <span>{e.location}</span>
+                </div>
+                <div className="card-2">
+                  <small>
+                    <MdLocationOn color="grey" size={20} />
+                    {e.event_type}
+                  </small>
+                  <br />
+                  <date>
+                    {" "}
+                    <MdWatchLater size={20} color="grey" />
+                    {e.date}
+                  </date>
+                  <p></p>
+                </div>
+                <div className="desc">
+                  <p>{e.desc}</p>
+                </div>
+                <div className="card-3">
+                  <button>View Details</button>
+                </div>
+              </div>
+            ))}
+          {/* <div className="card">
             <div className="card-1">
               <small
                 style={{
                   margin: "20px  0 0 2rem",
                   fontSize: "1rem",
-                  fontWeight: "500",
-                  color: "#24754F",
+                  fontWeight: "900",
+                  color: "green",
                 }}
               >
                 Education{" "}
               </small>
-              <bold>Indian Business School ,</bold>
+              <bold style={{color:"black"}}>Indian Business School ,</bold>
               <span>Hyderabad</span>
             </div>
             <div className="card-2">
               <small>
                 <MdLocationOn color="grey" size={20} />
-                <span style={{marginLeft:'5px'}}>Online Event</span>
-                
+                Online Event
               </small>
               <br />
               <date>
                 {" "}
-                <MdWatchLater size={20} color="grey" /> 
-                <span style={{marginLeft:'7px'}}>Jan 2 , 2023 | 12:31pm</span>
+                <MdWatchLater size={20} color="grey" /> Jan 2 , 2023 | 12:31pm
               </date>
               <p></p>
             </div>
@@ -223,7 +295,7 @@ export default function PersistentDrawerLeft() {
             <div className="card-3">
               <button>View Details</button>
             </div>
-          </div>
+          </div> */}
 
           <div className="card">
             <div className="card-1">
@@ -305,3 +377,64 @@ export default function PersistentDrawerLeft() {
     </Box>
   );
 }
+
+
+const cardData = [
+  {
+      event_catogary: "Education",
+      organizer: "Indian Business School",
+      location: "Hyderabad",
+      event_type: "Online Event",
+      date: "Jan 2 , 2023 | 12:31 pm",
+      desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque sint consectetur nemo volup",
+    },
+    {
+      event_catogary: "Education",
+      organizer: "Indian Business School",
+      location: "Hyderabad",
+      event_type: "Online Event",
+      date: "Jan 2 , 2023 | 12:31 pm",
+      desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque sint consectetur nemo volup",
+    },
+    {
+      event_catogary: "Education",
+      organizer: "Indian Business School",
+      location: "Hyderabad",
+      event_type: "Online Event",
+      date: "Jan 2 , 2023 | 12:31 pm",
+      desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque sint consectetur nemo volup",
+    },
+    {
+      event_catogary: "Education",
+      organizer: "Indian Business School",
+      location: "Hyderabad",
+      event_type: "Online Event",
+      date: "Jan 2 , 2023 | 12:31 pm",
+      desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque sint consectetur nemo volup",
+    },
+    {
+      event_catogary: "Education",
+      organizer: "Indian Business School",
+      location: "Hyderabad",
+      event_type: "Online Event",
+      date: "Jan 2 , 2023 | 12:31 pm",
+      desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque sint consectetur nemo volup",
+    },
+{
+  event_catogary: "Education",
+  organizer: "Indian Business School",
+  location: "Hyderabad",
+  event_type: "Online Event",
+  date: "Jan 2 , 2023 | 12:31 pm",
+  desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque sint consectetur nemo volup",
+},
+
+{
+  event_catogary: "Education",
+  organizer: "Indian Business School",
+  location: "Hyderabad",
+  event_type: "Online Event",
+  date: "Jan 2 , 2023 | 12:31 pm",
+  desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque sint consectetur nemo volup",
+},
+];

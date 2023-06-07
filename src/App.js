@@ -20,7 +20,7 @@ import Appp from './utilities/Pop/Login (1)';
 function App() {
   return (
     <BrowserRouter>
-    {/* <Navbar/> */}
+    <Navbar/>
       <Routes>
       <Route path='/login' element={<Appp/>}></Route>
       <Route path='/' element={<Landing/>}></Route>

@@ -16,7 +16,7 @@ const Eventdetails = ({event , setEvent , setOrganise}) => {
       <div>
         
         <div>
-          <form>
+          <form className="event-form">
             <div className="input-details">
               <label>Title of Event</label>
               <input type="text" placeholder="Enter the title of event" required/>
